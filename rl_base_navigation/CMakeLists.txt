@@ -36,6 +36,8 @@ install(PROGRAMS
   scripts/stage_simple_gym_env.py
   scripts/stage_simple_gym_train.py
   scripts/stage_gym_play.py
+  scripts/gazebo_gym_env.py
+  scripts/gazebo_gym_play.py
   DESTINATION lib/${PROJECT_NAME}
 )
 
