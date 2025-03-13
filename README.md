@@ -51,7 +51,7 @@ colcon build && source install/setup.bash
 ## Networks Structures
 The Soft Actor-Critic (SAC) is used in this work due to its high exploration rate via entropy regularization (SAC maximizes both the reward and the entropy of the action). This is particularly suitable for obstacle avoidance, which is a problem with sparse rewards (penalizing the agent only when it collides with objects and rewarding it for moving in the right direction).
 
-![](rl_base_navigation/media/PolicyNetworkStructure.png)
+![](https://github.com/WasupolHengsritawat/rl_base_navigation/blob/main/media/PolicyNetworkStructure.png)
 
 The policy network structure follows this [literature](https://journals.sagepub.com/doi/10.1177/0278364920916531). It processes three timesteps of 360-range LiDAR data using two 1D convolutional layers: the first with 32 kernels of size 4 and stride 2, and the second with 32 kernels of size 3 and stride 2. The output is then passed to a fully connected layer with 180 nodes.
 
@@ -111,17 +111,19 @@ Then, run it using
 ```
 
 ## Demo
-
+https://github.com/WasupolHengsritawat/rl_base_navigation/blob/main/media/demo.mp4
 
 ## Results
 ### Learning Results
-![](rl_base_navigation/media/ep_len_and_ep_rew.png)
+![](https://github.com/WasupolHengsritawat/rl_base_navigation/blob/main/media/ep_len_and_ep_rew.png)
 
 After training for 50,000 timesteps, SAC1 and SAC3 were trained in the random environment, while SAC4 was trained in the simple environment. None of the three models achieved an acceptable level of reward or reward convergence. This may be due to insufficient fine-tuning of the model and limited training time.
 
 However, the models trained in the random environment tended to achieve higher rewards. This could be due to their greater generalization ability, but a definitive conclusion cannot be drawn due to the lack of sufficient data. More models with improved training and fine-tuning are required for a thorough statistical analysis.
 
 ### Implementation Results
+https://github.com/WasupolHengsritawat/rl_base_navigation/blob/main/media/stage.webm
+https://github.com/WasupolHengsritawat/rl_base_navigation/blob/main/media/gazebo.webm
 
 The agent controlled by the model are having some sense of object avoidance but stills perform really bad. Better reward tuning will improve the agent behavior.
 
